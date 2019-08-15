@@ -11,6 +11,7 @@ public class PlayerInput : MonoBehaviour
     private Flipper rightFlipper;
 
     const string leftFlipperName = "Left Flipper";
+    const string rightFlipperName = "Right Flipper";
     //public
 
     #region Unity
@@ -18,15 +19,28 @@ public class PlayerInput : MonoBehaviour
     {
         playerCamera = Camera.main;
         leftFlipper = GetFlipper(leftFlipperName);
+        rightFlipper = GetFlipper(rightFlipperName);
         Assert.IsNotNull(leftFlipper, "Could not find child: " + leftFlipperName);
+
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = false;
     }
 
     void Update()
     {
+        float xPosition = playerCamera.ScreenToWorldPoint(Input.mousePosition).x;
+        transform.position = new Vector3(xPosition, transform.position.y, transform.position.z);
+
         leftFlipper.isFlipped = Input.GetButton(leftFlipperName);
+        rightFlipper.isFlipped = Input.GetButton(rightFlipperName);
+    }
+
+    void OnDestroy()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
     #endregion
-
 
     private Flipper GetFlipper(string flipperName)
     {

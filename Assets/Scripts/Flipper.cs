@@ -24,15 +24,14 @@ public class Flipper : MonoBehaviour
         if (isFlipped)
         {
             JointMotor2D flipperMotor = flipperHinge.motor;
-            flipperMotor.motorSpeed = flipperSpeed;
+            flipperMotor.motorSpeed = reverseMod * flipperSpeed;
 
             flipperHinge.motor = flipperMotor;
         }
         else
         {
-            //TODO: Add reverse mod
             JointMotor2D flipperMotor = flipperHinge.motor;
-            flipperMotor.motorSpeed = -flipperSpeed;
+            flipperMotor.motorSpeed = reverseMod * -flipperSpeed;
 
             flipperHinge.motor = flipperMotor;
         }

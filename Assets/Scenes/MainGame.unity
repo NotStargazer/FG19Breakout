@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 468295874}
   - component: {fileID: 468295876}
   - component: {fileID: 468295875}
+  - component: {fileID: 468295877}
   m_Layer: 0
   m_Name: Left Flipper
   m_TagString: Untagged
@@ -198,6 +199,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &468295877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468295873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef87d8f84273adf46b5804b788f7c7ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flipperSpeed: 1000
+  reverseMod: 1
 --- !u!1 &793900656
 GameObject:
   m_ObjectHideFlags: 0

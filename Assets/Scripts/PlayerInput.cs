@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 using UnityEngine.Assertions;
 
@@ -7,12 +6,13 @@ public class PlayerInput : MonoBehaviour
 {
     //private
     Camera playerCamera;
-    private Flipper leftFlipper;
-    private Flipper rightFlipper;
+    Flipper leftFlipper;
+    Flipper rightFlipper;
 
     const string leftFlipperName = "Left Flipper";
     const string rightFlipperName = "Right Flipper";
     //public
+    public float cameraShakeDecay;
 
     #region Unity
     void Awake()
@@ -21,7 +21,6 @@ public class PlayerInput : MonoBehaviour
         leftFlipper = GetFlipper(leftFlipperName);
         rightFlipper = GetFlipper(rightFlipperName);
         Assert.IsNotNull(leftFlipper, "Could not find child: " + leftFlipperName);
-
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = false;
     }

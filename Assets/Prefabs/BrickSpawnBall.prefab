@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -3725889978697520147}
   - component: {fileID: -7782894650319098259}
   m_Layer: 8
-  m_Name: BrickWeak
+  m_Name: BrickSpawnBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ad17f585ef59d19459672f050fb1650f, type: 3}
-  m_Color: {r: 0.631586, g: 0.7830189, b: 0.70516354, a: 1}
+  m_Color: {r: 0, g: 0.4716981, b: 0.22980165, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -120,7 +120,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec0470360b25d084687fa0296531ec25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  causeCameraShake: 0
+  causeCameraShake: 1
   isBreakable: 1
+  spawnBallOnBreak: 1
   sprites:
   - {fileID: 21300000, guid: ad17f585ef59d19459672f050fb1650f, type: 3}
